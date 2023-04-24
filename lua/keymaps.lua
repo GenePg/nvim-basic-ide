@@ -63,6 +63,7 @@ keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 
 keymap("n", "gr", ":Telescope lsp_references<CR>", opts)
 keymap("n", "<leader>fa", ":Telescope find_files find_command=rg,--no-ignore,--hidden,--files<CR>", opts)
+keymap("n", "<leader>/", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", opts)
 
 -- Git
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)

@@ -8,6 +8,10 @@ local M = {
       "ahmedkhalf/project.nvim",
       commit = "685bc8e3890d2feb07ccf919522c97f7d33b94e4",
     },
+    {
+      "nvim-telescope/telescope-live-grep-args.nvim",
+      commit = "0f75ea809c46af8997c64f49c52e3c641d887885"
+    }
   },
 }
 
