@@ -61,12 +61,15 @@ keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 
+keymap("n", "gr", ":Telescope lsp_references<CR>", opts)
+keymap("n", "<leader>fa", ":Telescope find_files find_command=rg,--no-ignore,--hidden,--files<CR>", opts)
+
 -- Git
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 
 -- Comment
-keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>", opts)
-keymap("x", "<leader>/", "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", opts)
+keymap("n", "<C-c>", "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>", opts)
+keymap("x", "<C-c>", "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", opts)
 
 -- DAP
 keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
@@ -81,3 +84,31 @@ keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
 
 -- Lsp
 keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts)
+
+-- Customize
+
+-- Move Line up & down
+keymap("n", "<A-j>", "<Esc>:m .+1<CR>==", opts)
+keymap("n", "<A-k>", "<Esc>:m .-2<CR>==", opts)
+keymap("v", "<A-j>", ":m '>+1<CR>gv=gv", opts)
+keymap("v", "<A-k>", ":m '<-2<CR>gv=gv", opts)
+
+-- Go to start of the line & Go to end of the line
+keymap("n", "gs", "^", opts)
+keymap("n", "gl", "$", opts)
+keymap("o", "gs", "^", opts)
+keymap("o", "gl", "$", opts)
+keymap("v", "gs", "^", opts)
+keymap("v", "gl", "$h", opts)
+
+-- Go to last line
+keymap("n", "ge", "G", opts)
+keymap("o", "ge", "G", opts)
+keymap("v", "ge", "G", opts)
+
+-- Helix & Kakoune keybindings
+
+-- M command
+keymap("n", "mi", "vi", opts)
+keymap("n", "ma", "va", opts)
+

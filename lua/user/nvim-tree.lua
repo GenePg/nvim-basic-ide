@@ -1,7 +1,11 @@
+-- disable netrw at the very start of your init.lua (strongly advised)
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 local M = {
   "kyazdani42/nvim-tree.lua",
   commit = "59e65d88db177ad1e6a8cffaafd4738420ad20b6",
-  event = "VimEnter"
+  event = "Bufenter"
 }
 
 function M.config()
